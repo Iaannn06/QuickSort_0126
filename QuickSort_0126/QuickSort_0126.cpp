@@ -68,10 +68,17 @@ void q_short(int low, int high)
 		{
 			swap(i, j);
 		}
+		if (low < j) {
+			swap(low, j);
+		}
+
+		q_short(low, j - 1);
+		q_short(j + 1, high);
+
 }
+void display() {
+	cout << "\-----------" << endl;
+	cout << "Sorted array" << endl;
+	cout << "------------" << endl;
 
-if (low < j) {
-	swap(low, j);
- }
-
-q_short(low, j - 1);
+}
